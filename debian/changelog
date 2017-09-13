@@ -1,0 +1,5 @@
+prometheus-jmx-exporter (0.10-1) stretch-wikimedia; urgency=low
+
+  * Initial release of 0.10
+
+ -- Andrew Otto (WMF) <otto@wikimedia.org>  Wed, 13 Sep 2017 19:45:37 +0000
