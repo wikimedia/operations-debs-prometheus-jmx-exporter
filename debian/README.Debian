@@ -10,6 +10,11 @@ This builds and installs 2 .jar files into /usr/share/java/prometheus:
   - jmx_prometheus_javaagent.jar
   - jmx_prometheus_httpserver.jar
 
+NOTE: If you are building a new upstream version, in addition to merging the tags
+into this debian branch and updating debian/changelog, you must also edit
+debian/prometheus-jmx-exporter.links to change the versionless .jar symlink.
+
+
 == Building with WMF package_builder
 
 WMF uses a custom setup of pbuilder and cowbuilder to build packages.  In our setup

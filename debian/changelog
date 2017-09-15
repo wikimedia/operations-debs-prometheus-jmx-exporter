@@ -1,3 +1,10 @@
+prometheus-jmx-exporter (0.10-2) stretch-wikimedia; urgency=low
+
+  * Versionless .jar symlink fix
+
+ -- Andrew Otto (WMF) <otto@wikimedia.org>  Fri, 15 Sep 2017 15:51:00 +0000
+
+
 prometheus-jmx-exporter (0.10-1) stretch-wikimedia; urgency=low
 
   * Initial release of 0.10

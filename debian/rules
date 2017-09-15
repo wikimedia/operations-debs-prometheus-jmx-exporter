@@ -15,23 +15,14 @@ override_dh_auto_build:
 	dh_auto_build
 
 override_dh_install:
-	# NOTE: We use ln here below rather than debian/prometheus-jmx-exporter.links to create
-	# versionless symlinks to avoid hardcoding DEB_VERSION_UPSTREAM into the .links file.
-
 	# Install jmx_prometheus_javaagent.jar
 	install -o root -g root -m 644 \
 		$(CURDIR)/jmx_prometheus_javaagent/target/jmx_prometheus_javaagent-$(DEB_VERSION_UPSTREAM).jar \
 		$(CURDIR)/debian/prometheus-jmx-exporter/usr/share/java/prometheus/jmx_prometheus_javaagent-$(DEB_VERSION_UPSTREAM).jar
-	ln -s \
-		$(CURDIR)/debian/prometheus-jmx-exporter/usr/share/java/prometheus/jmx_prometheus_javaagent-$(DEB_VERSION_UPSTREAM).jar \
-		$(CURDIR)/debian/prometheus-jmx-exporter/usr/share/java/prometheus/jmx_prometheus_javaagent.jar
 
 	# Install jmx_prometheus_httpserver.jar
 	install -o root -g root -m 644 \
 		$(CURDIR)/jmx_prometheus_httpserver/target/jmx_prometheus_httpserver-$(DEB_VERSION_UPSTREAM).jar \
 		$(CURDIR)/debian/prometheus-jmx-exporter/usr/share/java/prometheus/jmx_prometheus_httpserver-$(DEB_VERSION_UPSTREAM).jar
-	ln -s \
-		$(CURDIR)/debian/prometheus-jmx-exporter/usr/share/java/prometheus/jmx_prometheus_httpserver-$(DEB_VERSION_UPSTREAM).jar \
-		$(CURDIR)/debian/prometheus-jmx-exporter/usr/share/java/prometheus/jmx_prometheus_httpserver.jar
 
 	dh_install
