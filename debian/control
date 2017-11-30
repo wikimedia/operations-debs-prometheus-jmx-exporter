@@ -8,7 +8,9 @@ Homepage: https://github.com/prometheus/jmx_exporter
 
 Package: prometheus-jmx-exporter
 Architecture: all
-Depends: default-jre
+Depends: default-jre-headless | default-jre
+         | openjdk-8-jre-headless | openjdk-8-jre
+         | openjdk-9-jre-headless | openjdk-9-jre
 Description: JMX to Prometheus exporter
  .
  A Collector that can configurably scrape and expose mBeans of a JMX target.
