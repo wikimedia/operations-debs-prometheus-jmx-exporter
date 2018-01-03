@@ -1,0 +1,29 @@
+prometheus-jmx-exporter for Debian
+----------------------------------
+
+This debian package will patch pom.xml to use the Wikimedia Archiva repository
+when running mvn package.  This allows us to build this package without
+reaching out to the external internet, as dependencies are mirrored internally.
+
+This builds and installs 2 .jar files into /usr/share/java/prometheus:
+
+  - jmx_prometheus_javaagent.jar
+  - jmx_prometheus_httpserver.jar
+
+NOTE: If you are building a new upstream version, in addition to merging the tags
+into this debian branch and updating debian/changelog, you must also edit
+debian/prometheus-jmx-exporter.links to change the versionless .jar symlink.
+
+
+== Building with WMF package_builder
+
+WMF uses a custom setup of pbuilder and cowbuilder to build packages.  In our setup
+(via the package_builder Puppet module), networking is disabled by default.  In order
+for the build processes to reach archiva.wikimedia.org, you must set USENETWORK=yes
+in either your ~/.pbuilderrc file, or in /etc/pbuilderrc.  This variable
+will not work if you just set it on the CLI.
+
+Once done, run
+
+  DIST=stretch gbp buildpackage -us -uc
+

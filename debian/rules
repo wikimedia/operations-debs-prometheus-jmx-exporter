@@ -1,0 +1,28 @@
+#!/usr/bin/make -f
+
+# Include this file to get the DEB_VERSION_UPSTREAM variable.
+include /usr/share/dpkg/pkg-info.mk
+
+# output every command that modifies files on the build system.
+DH_VERBOSE = 1
+
+%:
+	dh $@
+
+
+override_dh_auto_build:
+	mvn package -DskipTests -Dmaven.repo.local=/tmp/.m2
+	dh_auto_build
+
+override_dh_install:
+	# Install jmx_prometheus_javaagent.jar
+	install -o root -g root -m 644 \
+		$(CURDIR)/jmx_prometheus_javaagent/target/jmx_prometheus_javaagent-$(DEB_VERSION_UPSTREAM).jar \
+		$(CURDIR)/debian/prometheus-jmx-exporter/usr/share/java/prometheus/jmx_prometheus_javaagent-$(DEB_VERSION_UPSTREAM).jar
+
+	# Install jmx_prometheus_httpserver.jar
+	install -o root -g root -m 644 \
+		$(CURDIR)/jmx_prometheus_httpserver/target/jmx_prometheus_httpserver-$(DEB_VERSION_UPSTREAM).jar \
+		$(CURDIR)/debian/prometheus-jmx-exporter/usr/share/java/prometheus/jmx_prometheus_httpserver-$(DEB_VERSION_UPSTREAM).jar
+
+	dh_install

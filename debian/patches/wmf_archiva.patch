@@ -1,0 +1,45 @@
+Index: prometheus_jmx_exporter/pom.xml
+===================================================================
+--- prometheus_jmx_exporter.orig/pom.xml	2017-09-13 21:33:03.620188336 +0000
++++ prometheus_jmx_exporter/pom.xml	2017-09-13 21:33:34.312556367 +0000
+@@ -33,6 +33,40 @@
+       </repository>
+   </distributionManagement>
+ 
++  <repositories>
++     <repository>
++       <id>central</id>
++       <url>http://repo1.maven.org/maven2</url>
++       <releases>
++         <enabled>false</enabled>
++       </releases>
++       <snapshots>
++         <enabled>false</enabled>
++       </snapshots>
++     </repository>
++     <repository>
++       <id>wmf-mirrored</id>
++       <url>https://archiva.wikimedia.org/repository/mirrored/</url>
++     </repository>
++   </repositories>
++
++   <pluginRepositories>
++     <pluginRepository>
++       <id>central</id>
++       <url>http://repo1.maven.org/maven2</url>
++       <releases>
++         <enabled>false</enabled>
++       </releases>
++       <snapshots>
++         <enabled>false</enabled>
++       </snapshots>
++     </pluginRepository>
++     <pluginRepository>
++       <id>wmf-mirrored</id>
++       <url>https://archiva.wikimedia.org/repository/mirrored/</url>
++     </pluginRepository>
++   </pluginRepositories>
++
+   <licenses>
+       <license>
+           <name>The Apache Software License, Version 2.0</name>
