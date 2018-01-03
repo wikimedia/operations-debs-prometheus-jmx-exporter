@@ -11,7 +11,7 @@ DH_VERBOSE = 1
 
 
 override_dh_auto_build:
-	mvn package -DskipTests
+	mvn package -DskipTests -Dmaven.repo.local=/tmp/.m2
 	dh_auto_build
 
 override_dh_install:
