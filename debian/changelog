@@ -1,3 +1,10 @@
+prometheus-jmx-exporter (1:0.3.0-1) strech-wikimedia; urgency=medium
+
+  * Upgrade to upstream version 0.3.0
+  * Introduce epoch 1 as upstream has changed its versioning scheme
+
+ -- Guillaume Lederrey <guillaume.lederrey@wikimedia.org>  Tue, 24 Apr 2018 15:27:01 +0200
+
 prometheus-jmx-exporter (0.10-3) stretch-wikimedia; urgency=medium
 
   * Swith to (and depend on) jre-headless and its versioned names. This avoids
