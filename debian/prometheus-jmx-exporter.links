@@ -1,2 +1,2 @@
-usr/share/java/prometheus/jmx_prometheus_javaagent-0.10.jar usr/share/java/prometheus/jmx_prometheus_javaagent.jar
-usr/share/java/prometheus/jmx_prometheus_httpserver-0.10.jar usr/share/java/prometheus/jmx_prometheus_httpserver.jar
+usr/share/java/prometheus/jmx_prometheus_javaagent-0.3.0.jar usr/share/java/prometheus/jmx_prometheus_javaagent.jar
+usr/share/java/prometheus/jmx_prometheus_httpserver-0.3.0.jar usr/share/java/prometheus/jmx_prometheus_httpserver.jar
