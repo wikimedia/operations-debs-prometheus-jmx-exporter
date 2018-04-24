@@ -1,21 +1,24 @@
 JMX Exporter
 =====
 
-JMX to Prometheus exporter.
+JMX to Prometheus exporter: a collector that can configurably scrape and
+expose mBeans of a JMX target.
 
-A Collector that can configurably scrape and expose mBeans of a JMX target. It
-meant to be run as a Java Agent, exposing an HTTP server and scraping the local
-JVM.
-
-This can be also run as an independent HTTP server and scrape remote JMX targets.
+This exporter is intended to be run as a Java Agent, exposing a HTTP server
+and serving metrics of the local JVM. It can be also run as an independent
+HTTP server and scrape remote JMX targets, but this has various
+disadvantages, such as being harder to configure and being unable to expose
+process metrics (e.g., memory and CPU usage). Running the exporter as a Java
+Agent is thus strongly encouraged.
 
 ## Running
 
-To run as a javaagent [download the jar](https://repo1.maven.org/maven2/io/prometheus/jmx/jmx_prometheus_javaagent/0.10/jmx_prometheus_javaagent-0.10.jar) and run:
+To run as a javaagent [download the jar](https://repo1.maven.org/maven2/io/prometheus/jmx/jmx_prometheus_javaagent/0.2.0/jmx_prometheus_javaagent-0.2.0.jar) and run:
 
 ```
-java -javaagent:./jmx_prometheus_javaagent-0.10.jar=1234:config.yaml -jar yourJar.jar
+java -javaagent:./jmx_prometheus_javaagent-0.2.0.jar=8080:config.yaml -jar yourJar.jar
 ```
+Metrics will now be accessible at http://localhost:8080/metrics
 
 To bind the java agent to a specific IP change the port number to `host:port`.
 
