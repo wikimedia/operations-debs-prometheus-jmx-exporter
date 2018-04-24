@@ -1,4 +1,4 @@
-prometheus-jmx-exporter (1:0.3.0-1) strech-wikimedia; urgency=medium
+prometheus-jmx-exporter (1:0.3.0-1) stretch-wikimedia; urgency=medium
 
   * Upgrade to upstream version 0.3.0
   * Introduce epoch 1 as upstream has changed its versioning scheme
