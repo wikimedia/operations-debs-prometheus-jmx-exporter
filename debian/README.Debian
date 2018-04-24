@@ -25,5 +25,10 @@ will not work if you just set it on the CLI.
 
 Once done, run
 
-  DIST=stretch gbp buildpackage -us -uc
+  gbp buildpackage -us -uc -S -nc --git-ignore-new
+  DIST=stretch sudo -E cowbuilder --build ../prometheus-jmx-exporter_$(dpkg-parsechangelog -SVersion).dsc
+
+The build above is done in 2 phases so that default-jdk, which is a build dependency
+is installed inside of cowbuilder. Otherwise, the build complains about a missing
+build dependency while creating the .dsc file.
 
