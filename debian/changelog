@@ -1,3 +1,9 @@
+prometheus-jmx-exporter (1:0.15.0-1) buster-wikimedia; urgency=medium
+
+  * Upgrade to upstream version 0.15.0
+
+ -- Cole White <cwhite@wikimedia.org>  Fri, 05 Mar 2021 15:45:56 +0000
+
 prometheus-jmx-exporter (1:0.3.0-1) stretch-wikimedia; urgency=medium
 
   * Upgrade to upstream version 0.3.0
